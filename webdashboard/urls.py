@@ -9,12 +9,17 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
+from timeseries import views as tsv
 
 admin.autodiscover()
 
 urlpatterns = [
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
+]
+
+urlpatterns += [
+    url(r'^timeseries$', tsv.home, name='timeseries/home'),
 ]
 
 urlpatterns += i18n_patterns(
