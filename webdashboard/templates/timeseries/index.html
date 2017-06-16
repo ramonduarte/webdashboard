@@ -1,0 +1,18 @@
+{% extends 'timeseries/base.html' %}
+
+{% block timeseries_content %}
+    <iframe src='{{ bokeh_app_src }}' width="{{ bokeh_app_width }}" height="{{ bokeh_app_height }}">
+        {{ bokeh_html.1|safe }}
+        {{ bokeh_html.0|safe }}
+
+        <link
+        href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.css"
+        rel="stylesheet" type="text/css">
+        <link
+        href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.6.min.css"
+        rel="stylesheet" type="text/css">
+
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.6.min.js"></script>
+    </iframe>
+{% endblock timeseries_content %}

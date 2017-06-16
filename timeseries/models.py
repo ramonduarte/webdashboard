@@ -1,5 +1,9 @@
 from __future__ import unicode_literals
-
+from cms.models import CMSPlugin
 from django.db import models
 
-# Create your models here.
+
+class TimeseriesPluginModel(CMSPlugin):
+
+    def __unicode__(self):
+        return ''
