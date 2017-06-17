@@ -1,7 +1,11 @@
 {% extends 'timeseries/base.html' %}
 
 {% block timeseries_content %}
-    <iframe src='{{ bokeh_app_src }}' width="{{ bokeh_app_width }}" height="{{ bokeh_app_height }}">
+    <button id="add_iframe" onclick="prepareFrame();">
+        Add Graph
+    </button>
+    <iframe src='{{ bokeh_app_src }}' width="{{ bokeh_app_width }}" height="{{ bokeh_app_height }}" scrolling="no"
+            marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0>
         {{ bokeh_html.1|safe }}
         {{ bokeh_html.0|safe }}
 
@@ -15,4 +19,14 @@
         <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
         <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.6.min.js"></script>
     </iframe>
+    <script type="text/javascript">
+        // source: https://stackoverflow.com/a/8726513
+        function prepareFrame() {
+            var ifrm = document.createElement("iframe");
+            ifrm.setAttribute("src", "http://google.com/");
+            ifrm.style.width = "{{ bokeh_app_width }}";
+            ifrm.style.height = "{{ bokeh_app_height }}";
+            document.body.appendChild(ifrm);
+        }
+    </script>
 {% endblock timeseries_content %}
