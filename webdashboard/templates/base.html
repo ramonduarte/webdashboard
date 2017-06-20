@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<link rel="shortcut icon" href={% static "controle_de_frequencia/img/cropped-corujinha.png" %} />
+	<link rel="shortcut icon" href={% static "img/favicon.png" %} />
 
-    <title>Web Dashboard</title>
+    <title>Webdashboard.pro</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -48,7 +48,7 @@
         </style>
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" style="background-color: #000;">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#id_navbar" aria-expanded="false" aria-controls="navbar">
@@ -57,15 +57,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-{#          <a class="navbar-brand" href="index.html"><img src='{% static "pura2017signingform/img/Logo-JPG.jpg" %}' height="20px"></a>#}
+          <a class="navbar-brand" href="index.html"><img src='{% static "img/logo.png" %}' height="40px" style="padding-bottom: 20px; padding-right: 40px;"></a>
         </div>
         <div id="id_navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/acompanhamento">Acompanhamento Estudantil</a></li>
-            <li><a href="/acompanhamento/alunos">Alunos</a></li>
-            <li><a href="https://purubemalves.com.br/frequencia">Chamada</a></li>
-            <li><a href="https://purubemalves.com.br/admin">Administração</a></li>
-            <li><a href="https://purubemalves.com.br/admin/logout">Sair</a></li>
+            <li><a href="https://github.com/ramonduarte/webdashboard">Repositório</a></li>
+            <li><a href="https://github.com/ramonduarte/bokeh-dashboard">Gráficos</a></li>
+{#            <li><a href="https://purubemalves.com.br/frequencia">Chamada</a></li>#}
+{#            <li><a href="https://purubemalves.com.br/admin">Administração</a></li>#}
+{#            <li><a href="https://purubemalves.com.br/admin/logout">Sair</a></li>#}
 {#            <li><a href="/alunos/biblioteca">Biblioteca</a></li>#}
 {#            <li><a href="/inscricao">Faça a sua inscrição</a></li>#}
 {#            <li><a href="/contato">Contato</a></li>#}
@@ -100,13 +100,12 @@
     <hr>
       <footer style="bottom: 0; width: 100%; text-align: center;">
         <p style="margin-bottom: 0;">
-            Feito com carinho e suor por <a href="https://ramonmelo.me/">Ramon Duarte de Melo</a>.
+            Feito por <a href="https://ramonmelo.me/">Ramon Duarte de Melo</a>.
 {#            <i class="fa fa-external-link" aria-hidden="true"></i>#}
             <a href="mailto:ramonduarte@poli.ufrj.br"><i class="fa fa-envelope" aria-hidden="true"></i></a>
             <a href="https://twitter.com/RamonMeloVEVO"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a href="https://github.com/ramonduarte"><i class="fa fa-github" aria-hidden="true"></i></a>
         </p>
-        <p>Licenciado para uso interno do Pré-Universitário Comunitário Rubem Alves.</p>
       </footer>
 
 
