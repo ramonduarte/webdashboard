@@ -19,13 +19,13 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    url(r'^timeseries/', include('timeseries.urls', namespace='timeseries')),
+    url(r'^', include('timeseries.urls', namespace='timeseries')),
 ]
 
-urlpatterns += i18n_patterns(
-    url(r'^admin/', include(admin.site.urls)),  # NOQA
-    url(r'^', include('cms.urls')),
-)
+# urlpatterns += i18n_patterns(
+#     url(r'^admin/', include(admin.site.urls)),  # NOQA
+#     url(r'^', include('cms.urls')),
+# )
 
 # This is only needed when using runserver.
 if settings.DEBUG:

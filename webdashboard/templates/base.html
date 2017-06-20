@@ -1,41 +1,126 @@
-{% load cms_tags menu_tags sekizai_tags %}
-<!doctype html>
-<html>
-    <head>
-        <title>{% block title %}This is my new project home page{% endblock title %}</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style type="text/css">
-            .nav {
-                padding-left: 0;
-            }
-            .nav li {
-                display: inline;
-                list-style-type: none;
-                padding-right: 20px;
-            }
-            .container {
-                width: 940px;
-                margin: 0 auto
-            }
-            .content {
-                float: left;
-                width: 80%;
-            }
-            .sidebar {
-                float: left;
-                width: 20%;
-            }
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<link rel="shortcut icon" href={% static "controle_de_frequencia/img/cropped-corujinha.png" %} />
+
+    <title>Web Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script type="text/javascript" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .nav {
+            padding-left: 0;
+        }
+        .nav li {
+            display: inline;
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        .container {
+            width: 940px;
+            margin: 0 auto
+        }
+        .content {
+            float: left;
+            width: 80%;
+        }
+        .sidebar {
+            float: left;
+            width: 20%;
+        }
         </style>
-        {% render_block "css" %}
-    </head>
-    <body>
-        {% cms_toolbar %}
-        <div class="container">
-            <ul class="nav">
-                {% show_menu 0 100 100 100 %}
-            </ul>
-            {% block content %}{% endblock content %}
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#id_navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+{#          <a class="navbar-brand" href="index.html"><img src='{% static "pura2017signingform/img/Logo-JPG.jpg" %}' height="20px"></a>#}
         </div>
-        {% render_block "js" %}
-    </body>
+        <div id="id_navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/acompanhamento">Acompanhamento Estudantil</a></li>
+            <li><a href="/acompanhamento/alunos">Alunos</a></li>
+            <li><a href="https://purubemalves.com.br/frequencia">Chamada</a></li>
+            <li><a href="https://purubemalves.com.br/admin">Administração</a></li>
+            <li><a href="https://purubemalves.com.br/admin/logout">Sair</a></li>
+{#            <li><a href="/alunos/biblioteca">Biblioteca</a></li>#}
+{#            <li><a href="/inscricao">Faça a sua inscrição</a></li>#}
+{#            <li><a href="/contato">Contato</a></li>#}
+{#            <li class="dropdown">#}
+{#              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>#}
+{#              <ul class="dropdown-menu">#}
+{#                <li><a href="#">Action</a></li>#}
+{#                <li><a href="#">Another action</a></li>#}
+{#                <li><a href="#">Something else here</a></li>#}
+{#                <li role="separator" class="divider"></li>#}
+{#                <li class="dropdown-header">Nav header</li>#}
+{#                <li><a href="#">Separated link</a></li>#}
+{#                <li><a href="#">One more separated link</a></li>#}
+{#              </ul>#}
+{#            </li>#}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+{#    <div class="jumbotron">#}
+{#      <div class="container">#}
+{#        <h1>Pré-Universitário Comunitário Rubem Alves</h1>#}
+{#        <p>O Pré-Universitário Comunitário Rubem Alves é um curso pré-universitário gratuito e aberto a todo o Rio de Janeiro.</p>#}
+{#      </div>#}
+{#    </div>#}
+
+            {% block content %}{% endblock content %}
+
+
+
+    <hr>
+      <footer style="bottom: 0; width: 100%; text-align: center;">
+        <p style="margin-bottom: 0;">
+            Feito com carinho e suor por <a href="https://ramonmelo.me/">Ramon Duarte de Melo</a>.
+{#            <i class="fa fa-external-link" aria-hidden="true"></i>#}
+            <a href="mailto:ramonduarte@poli.ufrj.br"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/RamonMeloVEVO"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://github.com/ramonduarte"><i class="fa fa-github" aria-hidden="true"></i></a>
+        </p>
+        <p>Licenciado para uso interno do Pré-Universitário Comunitário Rubem Alves.</p>
+      </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+{#    <script src="../../dist/js/bootstrap.min.js"></script>#}
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
 </html>
